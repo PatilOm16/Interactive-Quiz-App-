@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz Application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Welcome Screen -->
+        <div id="welcomeScreen" class="screen active">
+            <div class="welcome-content">
+                <h1>Interactive Quiz Application</h1>
+                <p class="subtitle">Test your knowledge with instant feedback!</p>
+                <div class="welcome-image">
+                    <svg width="150" height="150" viewBox="0 0 150 150">
+                        <circle cx="75" cy="75" r="70" fill="#4A90E2" opacity="0.1"/>
+                        <path d="M75 20 L75 50 M75 75 L75 130 M50 75 L100 75" stroke="#4A90E2" stroke-width="8" stroke-linecap="round"/>
+                        <circle cx="75" cy="60" r="8" fill="#4A90E2"/>
+                    </svg>
+                </div>
+                <button id="startBtn" class="btn btn-primary">Start Quiz</button>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quizScreen" class="screen">
+            <div class="quiz-header">
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                <div class="quiz-info">
+                    <span id="questionCounter">Question 1 of 10</span>
+                    <span id="score">Score: 0</span>
+                </div>
+            </div>
+
+            <div class="quiz-content">
+                <h2 id="questionText">Question will appear here</h2>
+                <div id="optionsContainer" class="options-container">
+                    <!-- Options will be dynamically loaded -->
+                </div>
+                <div id="feedback" class="feedback hidden">
+                    <p id="feedbackText"></p>
+                </div>
+                <button id="nextBtn" class="btn btn-primary hidden">Next Question</button>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="resultsScreen" class="screen">
+            <div class="results-content">
+                <h1>Quiz Completed!</h1>
+                <div class="score-circle">
+                    <svg width="200" height="200" viewBox="0 0 200 200">
+                        <circle cx="100" cy="100" r="90" fill="none" stroke="#e0e0e0" stroke-width="15"/>
+                        <circle id="scoreCircle" cx="100" cy="100" r="90" fill="none" stroke="#4CAF50" stroke-width="15" 
+                                stroke-dasharray="565.48" stroke-dashoffset="565.48" transform="rotate(-90 100 100)"/>
+                    </svg>
+                    <div class="score-text">
+                        <span id="finalScore">0</span>
+                        <span class="score-label">out of <span id="totalQuestions">10</span></span>
+                    </div>
+                </div>
+                <div class="performance-message" id="performanceMessage"></div>
+                <div class="results-stats">
+                    <div class="stat">
+                        <span class="stat-value" id="correctAnswers">0</span>
+                        <span class="stat-label">Correct</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value" id="incorrectAnswers">0</span>
+                        <span class="stat-label">Incorrect</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value" id="accuracy">0%</span>
+                        <span class="stat-label">Accuracy</span>
+                    </div>
+                </div>
+                <button id="restartBtn" class="btn btn-primary">Restart Quiz</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
